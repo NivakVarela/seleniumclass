@@ -1,0 +1,11 @@
+package OpenFireFox;
+
+import org.openqa.selenium.WebDriver;
+
+public class OpenFireFoxBrowser {
+
+	WebDriver driver;
+
+	driver = new FireFoxDriver();
+	
+}

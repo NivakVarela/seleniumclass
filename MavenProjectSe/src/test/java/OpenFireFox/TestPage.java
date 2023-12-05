@@ -1,0 +1,33 @@
+package OpenFireFox;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+
+
+class TestPage {
+	WebDriver driver;
+	@BeforeEach
+	void setUp() throws Exception {
+		System.setProperty("webdriver.gecko.driver", "D:\\librerias\\drivers\\geckodriver.exe");
+		driver = new FirefoxDriver();
+		driver.manage().window().maximize();
+		driver.get("https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC");
+	}
+
+	@AfterEach
+	void tearDown() throws Exception {
+		driver.quit();
+	}
+
+	@Test
+	void test() {
+		
+	}
+
+}
