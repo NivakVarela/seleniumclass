@@ -14,7 +14,7 @@ public class OpenFireFox {
 		
 		WebDriver driver;
 		
-		System.setProperty("webdriver.chrome.driver", "D:\\librerias\\drivers\\chromedriver-win64\\chromedriver.exe");
+		System.setProperty("webdriver.gecko.driver", "D:\\librerias\\drivers\\drivers\\geckodriver.exe");
 		driver = new ChromeDriver();
 		
 		driver.get("https://www.youtube.com/");

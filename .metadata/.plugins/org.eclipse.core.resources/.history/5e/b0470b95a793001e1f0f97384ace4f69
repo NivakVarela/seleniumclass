@@ -1,0 +1,50 @@
+package OpenFireFox;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+
+
+class TestPage {
+	WebDriver driver;
+	@BeforeEach
+	void setUp() throws Exception {
+		System.setProperty("webdriver.gecko.driver", "D:\\librerias\\drivers\\geckodriver.exe");
+		driver = new FirefoxDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.youtube.com/");
+		
+		
+		driver.manage().window().maximize();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		driver.findElement(By.xpath("/html/body/ytd-app/div[1]/div/ytd-masthead/div[4]/div[2]/ytd-searchbox")).sendKeys("A Tester Mate");
+		driver.findElement(By.id("search-icon-legacy")).click();
+		Thread.sleep(2000);
+		
+		WebElement El2= driver.findElement(By.xpath("*//*[text()='Tengo que saber de todos los tipos de Pruebas de Software?']"));
+		WebElement El1= driver.findElement(By.xpath("*//*[text()='Es importante saber de SQL cómo Tester?']"));
+		
+		js.executeScript("arguments[0].scrollIntoView();", El1);
+		
+		El2.click();
+		Thread.sleep(5000);
+	}
+
+	@AfterEach
+	void tearDown() throws Exception {
+	//driver.quit();
+	}
+
+	@Test
+	void test() {
+		
+	}
+
+}
